@@ -1,5 +1,12 @@
 {
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "seed": "node scripts/seed.js"
+  },
   "dependencies": {
-    "express": "^5.2.1"
+    "dotenv": "^16.4.7",
+    "express": "^5.2.1",
+    "mongoose": "^8.9.4"
   }
 }

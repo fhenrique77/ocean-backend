@@ -1,0 +1,22 @@
+POST http://localhost:3000/personagens
+Content-Type: application/json
+
+{
+    "name": "Summer Smith",
+    "status": "Alive",
+    "species": "Human",
+    "type": "",
+    "gender": "Female",
+    "origin": {
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
+    },
+    "location": {
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
+    },
+    "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+    "episode": [
+        "https://rickandmortyapi.com/api/episode/1"
+    ]
+}

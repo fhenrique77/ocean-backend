@@ -1,14 +1,23 @@
 import express from 'express'
+import rootRoutes from './routes/root.js'
+import personagensRoutes from './routes/personagens.js'
+import connectDB from './db/connection.js'
 
 const app = express()
 
-app.get('/', (req,res)=> {
-    res.send('Hello World')
-})
-app.get('/oi',(req,res) => {
-    res.send('Olá, mundo!')
-})
+app.use(express.json())
+app.use('/', rootRoutes)
+app.use('/personagens', personagensRoutes)
 
-app.listen(3000, () =>{
-    console.log ('Server is running on http://localhost:3000')
+const startServer = async () => {
+    await connectDB()
+
+    app.listen(3000, () => {
+        console.log('Server is running on http://localhost:3000')
+    })
+}
+
+startServer().catch((error) => {
+    console.error('Failed to start server:', error)
+    process.exit(1)
 })
